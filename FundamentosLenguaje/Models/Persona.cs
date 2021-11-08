@@ -4,10 +4,14 @@ using System.Text;
 
 namespace FundamentosLenguaje.Models
 {
+    public enum Paises { España, Francia, Alemania, Inglaterra}
     public class Persona
     {
-        public String Nombre;
-        public String Apellidos;
+        public Paises Nacionalidad { get; set; }
+        //modo de declarar propiedades si no vamos a contrlar nada
+        public String Nombre { get; set; }
+        public String Apellidos { get; set; }
+        //modo de declarar propiedades en las que controlamos algo
         private int _Edad;
         public int Edad
         {

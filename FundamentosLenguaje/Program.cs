@@ -14,9 +14,10 @@ namespace FundamentosLenguaje
             Persona person = new Persona();
             person.Nombre = "Alumno";
             person.Apellidos = "Azure";
+            person.Nacionalidad = Paises.Alemania;
             person.Edad = 25;
             Console.WriteLine(person.Nombre + ", " + person.Apellidos +
-                ", " + person.Edad);
+                ", " + person.Nacionalidad + ", " + person.Edad);
         }
 
         static void PedirMostrarNombres()
