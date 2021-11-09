@@ -30,8 +30,9 @@ namespace FundamentosLenguaje.Models
         }
 
         //metodo que devuelve un valor
-        public String GetNombreCompleto()
+        public virtual String GetNombreCompleto()
         {
+            Console.WriteLine("GetNombreCompleto Persona");
             return this.Nombre + " " + this.Apellidos;
         } 
 
