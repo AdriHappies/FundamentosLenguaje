@@ -12,12 +12,29 @@ namespace FundamentosLenguaje
         static void Main(string[] args)
         {
             Persona person = new Persona();
+            Persona person2 = new Persona("Profesor", "EOI");
             person.Nombre = "Alumno";
             person.Apellidos = "Azure";
+            person[0] = "Ojos azules";
+            person[1] = "Pelo largo";
+            person[2] = "Alto";
             person.Nacionalidad = Paises.Alemania;
             person.Edad = 25;
             Console.WriteLine(person.Nombre + ", " + person.Apellidos +
                 ", " + person.Nacionalidad + ", " + person.Edad);
+            Console.WriteLine(person2.Nombre + ", " + person2.Apellidos +
+                ", " + person2.Nacionalidad + ", " + person2.Edad);
+            person.ConvertirDescripciones();
+            Console.WriteLine(person[0]);
+            Console.WriteLine(person.GetNombreCompleto());
+            Console.WriteLine(person.GetNombreCompleto(true));
+            Empleado emp = new Empleado();
+            emp.Nombre = "Ben";
+            emp.Apellidos = "Kenobi";
+            Console.WriteLine(emp.GetNombreCompleto());
+            emp.Salario = 1200;
+            //la clase program no debe tocar salario minimo
+            //emp.SalarioMinimo = 4000; da error, no puede acceder a ello
         }
 
         static void PedirMostrarNombres()
