@@ -13,11 +13,12 @@ namespace FundamentosLenguaje.Models
         public String Direccion { get; set; }
         public bool Arrancado { get; set; }
 
-        public bool Arrancar()
+        public void Arrancar()
         {
-            return true;
+            this.Arrancado = true;
+            Console.WriteLine("Coche arrancado");
         }
-        public int Acelerar()
+        public void Acelerar()
         {
             if (this.Arrancado)
             {
@@ -31,9 +32,9 @@ namespace FundamentosLenguaje.Models
             {
                 throw new Exception("No puedes acelerar si no has arrancado el coche");
             }
-            return this.VelocidadActual;
+            
         }
-        public int Acelerar(int incremento)
+        public void Acelerar(int incremento)
         {
             if (this.Arrancado)
             {
@@ -47,18 +48,18 @@ namespace FundamentosLenguaje.Models
             {
                 throw new Exception("No puedes acelerar si no has arrancado el coche");
             }
-            return this.VelocidadActual;
+            
         }
-        public int Frenar()
+        public void Frenar()
         {
             this.VelocidadActual -= 20;
             if (this.VelocidadActual < 0)
             {
                 this.VelocidadActual = 0;
             }
-            return this.VelocidadActual;
+            
         }
-        public String Girar()
+        public void Girar()
         {
             if (this.Direccion == "Norte")
             {
@@ -76,7 +77,7 @@ namespace FundamentosLenguaje.Models
             {
                 this.Direccion = "Norte";
             }
-            return this.Direccion;
+            
         }
 
         public override string ToString()

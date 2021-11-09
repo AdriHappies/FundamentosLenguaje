@@ -74,29 +74,29 @@ namespace FundamentosLenguaje
                 opcion = int.Parse(Console.ReadLine());
                 if (opcion == 1)
                 {
-                    car.Arrancado = car.Arrancar();
+                    car.Arrancar();
                     Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 2)
                 {
-                    car.VelocidadActual = car.Acelerar();
+                    car.Acelerar();
                     Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 3)
                 {
-                    car.VelocidadActual = car.Frenar();
+                    car.Frenar();
                     Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 4)
                 {
-                    car.Direccion = car.Girar();
+                    car.Girar();
                     Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 5)
                 {
                     Console.WriteLine("Escriba el incremento");
                     int incremento = int.Parse(Console.ReadLine());
-                    car.VelocidadActual = car.Acelerar(incremento);
+                    car.Acelerar(incremento);
                     Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 6)
