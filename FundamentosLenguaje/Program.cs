@@ -12,47 +12,101 @@ namespace FundamentosLenguaje
     {
         static void Main(string[] args)
         {
-            {//Persona person = new Persona();
-             //Persona person2 = new Persona("Profesor", "EOI");
-             //person.Nombre = "Alumno";
-             //person.Apellidos = "Azure";
-             //person[0] = "Ojos azules";
-             //person[1] = "Pelo largo";
-             //person[2] = "Alto";
-             //person.Nacionalidad = Paises.Alemania;
-             //person.Edad = 25;
-             //Console.WriteLine(person.Nombre + ", " + person.Apellidos +
-             //    ", " + person.Nacionalidad + ", " + person.Edad);
-             //Console.WriteLine(person2.Nombre + ", " + person2.Apellidos +
-             //    ", " + person2.Nacionalidad + ", " + person2.Edad);
-             //person.ConvertirDescripciones();
-             //Console.WriteLine(person[0]);
-             //Console.WriteLine(person.GetNombreCompleto());
-             //Console.WriteLine(person.GetNombreCompleto(true));
+            #region Codigo anterior
+            //Persona person = new Persona();
+            //Persona person2 = new Persona("Profesor", "EOI");
+            //person.Nombre = "Alumno";
+            //person.Apellidos = "Azure";
+            //person[0] = "Ojos azules";
+            //person[1] = "Pelo largo";
+            //person[2] = "Alto";
+            //person.Nacionalidad = Paises.Alemania;
+            //person.Edad = 25;
+            //Console.WriteLine(person.Nombre + ", " + person.Apellidos +
+            //    ", " + person.Nacionalidad + ", " + person.Edad);
+            //Console.WriteLine(person2.Nombre + ", " + person2.Apellidos +
+            //    ", " + person2.Nacionalidad + ", " + person2.Edad);
+            //person.ConvertirDescripciones();
+            //Console.WriteLine(person[0]);
+            //Console.WriteLine(person.GetNombreCompleto());
+            //Console.WriteLine(person.GetNombreCompleto(true));
 
-                //Empleado emp = new Empleado();
-                //emp.Nombre = "Ben";
-                //emp.Apellidos = "Kenobi";
-                //emp.Salario = 1200;
-                //Console.WriteLine(emp.GetNombreCompleto());
-                //Director dir = new Director(22000);
-                //Console.WriteLine(dir.GetDiasVacaciones());
-            }
-
-            Random random = new Random();
-            //guardamos los 12 meses con sus datos
-            HelperMeses helper = new HelperMeses();            
-            foreach (TemperaturaMes mes in helper.Meses)
+            //Empleado emp = new Empleado();
+            //emp.Nombre = "Ben";
+            //emp.Apellidos = "Kenobi";
+            //emp.Salario = 1200;
+            //Console.WriteLine(emp.GetNombreCompleto());
+            //Director dir = new Director(22000);
+            //Console.WriteLine(dir.GetDiasVacaciones());
+            #endregion
+            #region Ejemplo Meses
+            //Random random = new Random();
+            ////guardamos los 12 meses con sus datos
+            //HelperMeses helper = new HelperMeses();            
+            //foreach (TemperaturaMes mes in helper.Meses)
+            //{
+            //    Console.WriteLine(mes.Mes + ", Maxima: " + mes.Maxima +
+            //        ", Minima: " + mes.Minima + ", Media: " + mes.GetMedia());
+            //}
+            //Console.WriteLine("\nDatos anuales");
+            //Console.WriteLine("Máxima anual: " + helper.GetMaximaAnual());
+            //Console.WriteLine("Mínima anual: " + helper.GetMinimaAnual());
+            //Console.WriteLine("Media anual: " + helper.GetMediaAnual());
+            #endregion
+            Coche car = new Coche();
+            car.Arrancado = false;
+            car.Direccion = "Norte";
+            car.Marca = "Dacia";
+            car.Modelo = "Sandero";
+            car.VelocidadActual = 0;
+            car.VelocidadMaxima = 200;
+            int opcion = -1;
+            while (opcion != 6)
             {
-                Console.WriteLine(mes.Mes + ", Maxima: " + mes.Maxima +
-                    ", Minima: " + mes.Minima + ", Media: " + mes.GetMedia());
-            }
-            Console.WriteLine("\nDatos anuales");
-            Console.WriteLine("Máxima anual: " + helper.GetMaximaAnual());
-            Console.WriteLine("Mínima anual: " + helper.GetMinimaAnual());
-            Console.WriteLine("Media anual: " + helper.GetMediaAnual());
-        }
+                Console.WriteLine("---Menu de coche---");
+                Console.WriteLine("1.- Arrancar");
+                Console.WriteLine("2.- Acelerar");
+                Console.WriteLine("3.- Frenar");
+                Console.WriteLine("4.- Girar");
+                Console.WriteLine("5.- Acelerar incremento");
+                Console.WriteLine("6.- Salir");
+                Console.WriteLine("Elija una opcion");
+                opcion = int.Parse(Console.ReadLine());
+                if (opcion == 1)
+                {
+                    car.Arrancado = car.Arrancar();
+                    Console.WriteLine(car.ToString());
+                }
+                else if (opcion == 2)
+                {
+                    car.VelocidadActual = car.Acelerar();
+                    Console.WriteLine(car.ToString());
+                }
+                else if (opcion == 3)
+                {
+                    car.VelocidadActual = car.Frenar();
+                    Console.WriteLine(car.ToString());
+                }
+                else if (opcion == 4)
+                {
+                    car.Direccion = car.Girar();
+                    Console.WriteLine(car.ToString());
+                }
+                else if (opcion == 5)
+                {
+                    Console.WriteLine("Escriba el incremento");
+                    int incremento = int.Parse(Console.ReadLine());
+                    car.VelocidadActual = car.Acelerar(incremento);
+                    Console.WriteLine(car.ToString());
+                }
+                else if (opcion == 6)
+                {
+                    Console.WriteLine("\nCoche aparcado");
+                }
 
+            }
+        }
+        #region Ejemplos de staticVoid
         static void PedirMostrarNombres()
         {
             String name = "";
@@ -350,5 +404,6 @@ namespace FundamentosLenguaje
             Console.WriteLine("Número menor: " + menor);
             //cambio
         }
+        #endregion
     }
 }
