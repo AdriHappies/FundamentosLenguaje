@@ -63,48 +63,47 @@ namespace FundamentosLenguaje
             int opcion = -1;
             while (opcion != 6)
             {
-                Console.WriteLine("---Menu de coche---");
-                Console.WriteLine("1.- Arrancar");
-                Console.WriteLine("2.- Acelerar");
-                Console.WriteLine("3.- Frenar");
-                Console.WriteLine("4.- Girar");
-                Console.WriteLine("5.- Acelerar incremento");
-                Console.WriteLine("6.- Salir");
-                Console.WriteLine("Elija una opcion");
+                MostrarMenu();
                 opcion = int.Parse(Console.ReadLine());
                 if (opcion == 1)
                 {
                     car.Arrancar();
-                    Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 2)
                 {
                     car.Acelerar();
-                    Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 3)
                 {
                     car.Frenar();
-                    Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 4)
                 {
                     car.Girar();
-                    Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 5)
                 {
                     Console.WriteLine("Escriba el incremento");
                     int incremento = int.Parse(Console.ReadLine());
                     car.Acelerar(incremento);
-                    Console.WriteLine(car.ToString());
                 }
                 else if (opcion == 6)
                 {
                     Console.WriteLine("\nCoche aparcado");
                 }
-
+                Console.WriteLine(car.ToString());
             }
+        }
+        static void MostrarMenu()
+        {
+            Console.WriteLine("---Menu de coche---");
+            Console.WriteLine("1.- Arrancar");
+            Console.WriteLine("2.- Acelerar");
+            Console.WriteLine("3.- Frenar");
+            Console.WriteLine("4.- Girar");
+            Console.WriteLine("5.- Acelerar incremento");
+            Console.WriteLine("6.- Salir");
+            Console.WriteLine("Elija una opcion");
         }
         #region Ejemplos de staticVoid
         static void PedirMostrarNombres()
